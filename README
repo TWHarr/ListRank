@@ -3,7 +3,8 @@ A small utility to rank lists.
 Idea based on Flickchart.
 
 2/6/14- Initial implementation. Got it up and running in a js console, now working on porting it to 
-jquery/html so i can dump it on a website and let other people use it. Ugly and shitty, but technically works.
+jquery/html so i can dump it on a website and let other people use it. Ugly and shitty, but technically works. Demo here: http://twharr.com/rank.html
+
 
 Future updates will make it all run normally on the page instead of alert boxes, and will include CSS so it doesn't
 look so bare. 
