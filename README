@@ -2,6 +2,8 @@ A small utility to rank lists.
 
 Idea based on Flickchart.
 
+2/7/14- Added duplicate checking (simple, doesn’t account for punctuation or capitalization yet) and an undo button. 
+
 2/6/14- Initial implementation. Got it up and running in a js console, now working on porting it to 
 jquery/html so i can dump it on a website and let other people use it. Ugly and shitty, but technically works. Demo here: http://twharr.com/rank.html
 
