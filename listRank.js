@@ -6,9 +6,10 @@ var last = [];
 var buildList = function(formField) {
     if (formField !== null) {
         var formField = formField.split(',');
+        var listCollapse = list.join("").toLowerCase().replace(/\s|[^a-z0-9]/g,"");
         for (var i = 0; i < formField.length; i++) {
-            if (list.indexOf(formField[i]) === -1) {
-                list.push(formField[i]);
+            if (listCollapse.indexOf(formField[i].toLowerCase().replace(/\s|[^a-z0-9]/g,"")) === -1) {
+                list.push(formField[i])
             }
         }
     }
