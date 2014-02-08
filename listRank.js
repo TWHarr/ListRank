@@ -1,4 +1,4 @@
-var list = [];
+var list = (JSON.parse(localStorage.getItem('cachedList')));
 var item1 = "";
 var item2 = "";
 var last = [];
@@ -80,6 +80,7 @@ var undoLast = function(){ //undo function to be called with last obj
 }
 
 var displayList = function(){ //displays the updated list on the page
+    localStorage.setItem('cachedList', JSON.stringify(list));
     $(".listHead > li").remove();
     for (var i = 0; i < list.length; i++) {
         $(".listHead").append("<li></li>");
@@ -118,5 +119,21 @@ $(document).ready(function() { // hitting enter submits item as well
 $(document).ready(function() { //starts the ranking process
     $(".rank").on("click", function(){
         choice();
+    })
+})
+
+$(document).ready(function(){ // on page load, if there is a cached list, display it
+    if (list !== []) {
+        displayList();
+    }
+})
+
+$(document).ready(function(){ //clear list
+    $(".delete").on("click", function() {
+        var choice = confirm("Are you surre you want to delete your list? Once you do, you can't get it back!");
+        if (choice) {
+            list = [];
+            displayList();
+        }
     })
 })
