@@ -1,6 +1,7 @@
 var list = [];
 var item1 = "";
 var item2 = "";
+var last = [];
 
 var buildList = function(formField) {
     if (formField !== null) {
@@ -31,6 +32,7 @@ var choice = function() {
         $(".result").empty().append("No selection was made. Hit the button below to keep going!")
         displayList();
     } else if (userInput === "1") {
+        last = $.extend(true, [], list);
         var space1 = list.indexOf(item1);
         var space2 = list.indexOf(item2);
         if (space2 < space1) {
@@ -45,6 +47,7 @@ var choice = function() {
             choice();
         }
     } else if (userInput === "2") {
+        last = $.extend(true, [], list);
         var space1 = list.indexOf(item1);
         var space2 = list.indexOf(item2);
         if (space1 < space2) {
@@ -64,6 +67,15 @@ var choice = function() {
     }
 };
 
+var undoLast = function(){ //undo function to be called with last obj
+    if (list === last) {
+        $(".result").empty().append("Your last choice didn't cause a change. There's nothing to undo!");
+    } else if (list !== last) {
+        list = last;
+        displayList();
+        $(".result").empty().append("Your last choice was reverted!");
+    }
+}
 
 var displayList = function(){ //displays the updated list on the page
     $(".listHead > li").remove();
@@ -72,6 +84,12 @@ var displayList = function(){ //displays the updated list on the page
         $(".listHead > li:last").append(list[i]);
     };
 }
+
+$(document).ready(function() { //clicking undoes the last choice
+    $(".undo").on("click", function() {
+        undoLast();
+    })
+});
 
 $(document).ready(function() { // clicking send sends inputted item(s)
     $(".submit").on("click", function() {
