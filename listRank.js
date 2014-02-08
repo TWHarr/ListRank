@@ -6,9 +6,10 @@ var last = [];
 var buildList = function(formField) {
     if (formField !== null) {
         var formField = formField.split(',');
-        formField.reverse();
-        for (var i = formField.length - 1; i >= 0; i--) {
-            list.push(formField[i]);
+        for (var i = 0; i < formField.length; i++) {
+            if (list.indexOf(formField[i]) === -1) {
+                list.push(formField[i]);
+            }
         }
     }
     displayList();    
