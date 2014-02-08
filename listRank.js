@@ -57,7 +57,7 @@ var choice = function() {
             displayList();
             choice();
         } else {
-            $(".result").empty().append("Your list remains unchanged:");
+            $(".result").empty().append("Your list remains unchanged.");
             displayList();
             choice();
         }
