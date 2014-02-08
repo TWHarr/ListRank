@@ -2,6 +2,7 @@ var list = (JSON.parse(localStorage.getItem('cachedList')));
 var item1 = "";
 var item2 = "";
 var last = [];
+var counter = parseInt(localStorage.getItem('count'));
 
 var buildList = function(formField) {
     if (formField !== null) {
@@ -34,6 +35,8 @@ var choice = function() {
         $(".result").empty().append("No selection was made. Hit the button below to keep going!")
         displayList();
     } else if (userInput === "1") {
+        counter++;
+        $(".counter").empty().append(counter + " items!")
         last = $.extend(true, [], list);
         var space1 = list.indexOf(item1);
         var space2 = list.indexOf(item2);
@@ -49,6 +52,8 @@ var choice = function() {
             choice();
         }
     } else if (userInput === "2") {
+        counter++;
+        $(".counter").empty().append(counter + " items!")
         last = $.extend(true, [], list);
         var space1 = list.indexOf(item1);
         var space2 = list.indexOf(item2);
@@ -81,6 +86,7 @@ var undoLast = function(){ //undo function to be called with last obj
 
 var displayList = function(){ //displays the updated list on the page
     localStorage.setItem('cachedList', JSON.stringify(list));
+    localStorage.setItem('count', counter.toString());
     $(".listHead > li").remove();
     for (var i = 0; i < list.length; i++) {
         $(".listHead").append("<li></li>");
@@ -128,11 +134,18 @@ $(document).ready(function(){ // on page load, if there is a cached list, displa
     }
 })
 
+$(document).ready(function(){
+    if (counter > 0) {
+        $(".counter").empty().append(counter + " items!")
+    }
+})
+
 $(document).ready(function(){ //clear list
     $(".delete").on("click", function() {
         var choice = confirm("Are you surre you want to delete your list? Once you do, you can't get it back!");
         if (choice) {
             list = [];
+            counter = 0;
             displayList();
         }
     })
