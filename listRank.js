@@ -1,8 +1,16 @@
-var list = (JSON.parse(localStorage.getItem('cachedList')));
+if ((JSON.parse(localStorage.getItem('cachedList')) !== null)) {
+    var list = (JSON.parse(localStorage.getItem('cachedList')));
+} else {
+    var list = [];
+}
 var item1 = "";
 var item2 = "";
 var last = [];
-var counter = parseInt(localStorage.getItem('count'));
+if ((parseInt(localStorage.getItem('count'))) !== null) {
+    var counter = parseInt(localStorage.getItem('count'));
+} else {
+    var counter = 0;
+}
 
 var buildList = function(formField) {
     if (formField !== null) {
