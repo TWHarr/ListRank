@@ -1,0 +1,7 @@
+.list, .item1 {
+    float: left;
+}
+
+.choice, .item2 {
+    float: right;
+}

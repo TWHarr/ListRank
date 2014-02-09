@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="rankStyle.css">
+</head>
 <body>
 <script src="jquery-1.11.0.min.js"></script>
 <script src="listRank.js"></script>
-<p>Item to rank:</p><input type="text" /><button class="submit">Submit</button>
-<ol class="listHead">Your List</ol>
-<p class="resultInt">Result:</p><p class="result"></p>
-<button class="rank">Rank your list!</button>
-<button class="undo"> Undo your last selection!</button>
-<button class="delete">Clear your list?</button>
-<p>You've ranked</p><p class="counter"></p>
+<div class ="list">
+    <p>Item to rank:</p><input type="text" /><button class="submit">Submit</button>
+    <ol class="listHead">Your List</ol>
+    <p class="resultInt">Result:</p><p class="result"></p>
+    <button class="rank">Rank your list!</button>
+    <button class="undo"> Undo your last selection!</button>
+    <button class="delete">Clear your list?</button>
+    <p>You've ranked</p><p class="counter"></p>
+</div>
+<div class ="choice">
+    <h3>Which do you prefer?</h3>
+    <div class="item1">
+        <p></p>
+        <button class="choice1"> This one!</button>
+    </div>
+    <div class="item2">
+        <p></p>
+        <button class="choice2"> This one!</button>
+    </div>
+</div>
 </body>
 </html>

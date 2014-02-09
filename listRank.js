@@ -42,11 +42,12 @@ var select2 = function() {// selects the two items to be compared
 
 var choice = function() {
     select2();
-    var userInput = prompt(("Which do you like more? " + item1[0] +"? or " + item2[0] + "?"), "Type '1' or '2' here. Hit Cancel to stop ranking.");
-    if (userInput === null) {
-        $(".result").empty().append("No selection was made. Hit the button below to keep going!")
-        displayList();
-    } else if (userInput === "1") {
+    $(".item1 > p").empty().append(item1[0]);
+    $(".item2 > p").empty().append(item2[0]);
+}
+
+$(document).ready(function(){ //user presses button1
+    $(".choice1").on("click", function(){
         counter++;
         item1[1]++;
         item2[1]++;
@@ -66,8 +67,12 @@ var choice = function() {
             displayList();
             choice();
         }
-    } else if (userInput === "2") {
-        counter++;
+    })
+})
+
+$(document).ready(function(){ // user presses button 2
+    $(".choice2").on("click", function(){
+       counter++;
         item1[1]++;
         item2[1]++;
         item2[2]++;
@@ -84,13 +89,11 @@ var choice = function() {
         } else {
             $(".result").empty().append(item2[0] + " is already ahead of " + item1[0] + ". Your list remains unchanged. You've ranked " + item2[0] + " " + item2[1] + " times, and it wins " + Math.round(((item2[2] * 100) / item2[1])) +"% of the time.");
             displayList();
-            choice();
+            choice(); 
         }
-    } else {
-        $(".result").empty().append("I guess you don't know how to follow instructions. Try again");
-        choice();
-    }
-};
+    })
+})
+
 
 var undoLast = function(){ //undo function to be called with last obj
     if (list === last) {
