@@ -2,6 +2,8 @@ A small utility to rank lists.
 
 Idea based on Flickchart.
 
+2/8/14- Duplicates are now found even with differing caps or punctuation. There is a counter that keeps track of how many times you’ve ranked items. There are stats that tell you how many times you’ve ranked the winning item, and how often it wins. Also some small bug-fixes and refactoring. 
+
 2/7/14- Added duplicate checking (simple, doesn’t account for punctuation or capitalization yet) and an undo button. 
 
 2/6/14- Initial implementation. Got it up and running in a js console, now working on porting it to 
