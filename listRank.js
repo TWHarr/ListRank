@@ -166,6 +166,9 @@ $(document).ready(function(){
 $(document).ready(function(){ //clear list
     $(".delete").on("click", function() {
         var choice = confirm("Are you sure you want to delete your list? Once you do, you can't get it back!");
+        $(".result").empty();
+        $(".item1 > p").empty();
+        $(".item2 > p").empty();
         if (choice) {
             list = [];
             counter = 0;
