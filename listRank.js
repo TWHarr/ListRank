@@ -12,7 +12,7 @@ if ((parseInt(localStorage.getItem('count'))) !== null) {
     var counter = 0;
 }
 
-var buildList = function(formField) {
+var buildList = function(formField) { // accepts new list items, adds them to bottom of list, displays
     if (formField !== null) {
         var formField = formField.split(',');
         var listCollapse =[];
@@ -40,7 +40,7 @@ var select2 = function() {// selects the two items to be compared
 };
 
 
-var choice = function() {
+var choice = function() { // calls select2 to get random items, displays on page
     select2();
     $(".item1 > p").empty().append(item1[0]);
     $(".item2 > p").empty().append(item2[0]);
@@ -157,7 +157,7 @@ $(document).ready(function(){ // on page load, if there is a cached list, displa
     }
 })
 
-$(document).ready(function(){
+$(document).ready(function(){ // increment ranking counter on page
     if (counter > 0) {
         $(".counter").empty().append(counter + " items!")
     }
