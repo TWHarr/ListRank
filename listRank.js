@@ -100,6 +100,7 @@ var undoLast = function(){ //undo function to be called with last obj
         $(".result").empty().append("Your last choice didn't cause a change. There's nothing to undo!");
     } else if (list !== last) {
         list = last;
+        counter--;
         displayList();
         $(".result").empty().append("Your last choice was reverted!");
     }
