@@ -7,13 +7,13 @@
 }
 
 .choice {
-	position: relative;
-	display: inline-block;
-	padding-left:200px;
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .list {
-	padding-left:75px;
+	padding-left:50px;
 	width: 300px;
 }
 
