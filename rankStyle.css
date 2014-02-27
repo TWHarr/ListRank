@@ -2,8 +2,19 @@
     float: left;
 }
 
-.choice, .item2 {
+.item2 {
     float: right;
+}
+
+.choice {
+	position: relative;
+	display: inline-block;
+	padding-left:200px;
+}
+
+.list {
+	padding-left:75px;
+	width: 300px;
 }
 
 .footer {
@@ -21,9 +32,9 @@ html, body {
 	position: relative;
 }
 
-/*.top {
-	padding: 10px;
-}*/
+.top h2 {
+	text-align: center;
+}
 
 .main {
 	padding: 10px;
@@ -41,4 +52,8 @@ html, body {
 .footer a {
 	display: inline;
 	padding: 5px 20px 5px 20px;
+}
+
+.list button {
+	display: block;
 }
