@@ -24,6 +24,7 @@
 	float: left;
 	padding-left:50px;
 	padding-right:50px;
+	margin-left: 5px;
 	max-width: 300px;
 	border: 1px black solid;
 	border-radius: 15px;
@@ -50,7 +51,7 @@ html, body {
 }
 
 .top h2 {
-	padding-left: 50px;
+	padding-left: 55px;
 }
 
 .footer {

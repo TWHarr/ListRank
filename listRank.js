@@ -62,11 +62,11 @@ $(document).ready(function(){ //user presses button1
         if (space2 < space1) {
             var switched = list.splice(space1,1);
             var newList = list.splice(space2,0,item1);
-            $(".result").empty().append(item1[0] + " moved to position " + (list.indexOf(item1)+1) + " in your list! You've ranked " + item1[0] + " " + item1[1] + " times, and it wins " + Math.round(((item1[2] * 100) / item1[1])) +"% of the time." );
+            $(".result").empty().append("<strong>"+item1[0]+"</strong>" + " moved to position " + (list.indexOf(item1)+1) + " in your list! You've ranked " + "<strong>"+item1[0]+"</strong>" + " " + item1[1] + " times, and it wins " + Math.round(((item1[2] * 100) / item1[1])) +"% of the time." );
             displayList();
             choice();
         } else {
-            $(".result").empty().append(item1[0] + " is already ahead of " + item2[0] + ". Your list remains unchanged. You've ranked " + item1[0] + " " + item1[1] + " times, and it wins " + Math.round(((item1[2] * 100) / item1[1])) +"% of the time.");
+            $(".result").empty().append("<strong>"+item1[0]+"</strong>" + " is already ahead of " + "<strong>"+item2[0]+"</strong>" + ". Your list remains unchanged. You've ranked " + "<strong>"+item1[0]+"</strong>" + " " + item1[1] + " times, and it wins " + Math.round(((item1[2] * 100) / item1[1])) +"% of the time.");
             displayList();
             choice();
         }
@@ -86,11 +86,11 @@ $(document).ready(function(){ // user presses button 2
         if (space1 < space2) {
             var switched = list.splice(space2,1);
             var newList = list.splice(space1,0,item2);
-            $(".result").empty().append(item2[0] + " moved to position " + (list.indexOf(item2)+1) + " in your list! You've ranked " + item2[0] + " " + item2[1] + " times, and it wins " + Math.round(((item2[2] * 100) / item2[1])) +"% of the time." );
+            $(".result").empty().append("<strong>"+item2[0]+"</strong>" + " moved to position " + (list.indexOf(item2)+1) + " in your list! You've ranked " + "<strong>"+item2[0]+"</strong>" + " " + "<strong>"+item2[0]+"</strong>" + " times, and it wins " + Math.round(((item2[2] * 100) / item2[1])) +"% of the time." );
             displayList();
             choice();
         } else {
-            $(".result").empty().append(item2[0] + " is already ahead of " + item1[0] + ". Your list remains unchanged. You've ranked " + item2[0] + " " + item2[1] + " times, and it wins " + Math.round(((item2[2] * 100) / item2[1])) +"% of the time.");
+            $(".result").empty().append("<strong>"+item2[0]+"</strong>" + " is already ahead of " + "<strong>"+item1[0]+"</strong>" + ". Your list remains unchanged. You've ranked " + "<strong>"+item2[0]+"</strong>" + " " + item2[1] + " times, and it wins " + Math.round(((item2[2] * 100) / item2[1])) +"% of the time.");
             displayList();
             choice(); 
         }
@@ -180,6 +180,18 @@ $(document).ready(function(){ //clear list
         }
     })
 })
+
+$(document).ready(function(){ //brief about alert
+    $("#about").on("click", function() {
+        alert("This was inspired by flickchart.com\nBuilt by Tim Harrison as a first coding project.\nIt's ugly but it should be functional.\nSee more things at github.com/TWHarr");
+    })
+});
+
+$(document).ready(function(){ //brief help alert
+    $("#help").on("click", function() {
+        alert("Put things you want to compare in the 'Items to Rank Box', individually or separated by comma.\nHit Rank your list! to begin comparing.\nSelect the one you prefer, and your list will be rearranged accordingly.\nThe clear and undo buttons should be self explanatory, but are permanent.");
+    })
+});
 
 /*
 
