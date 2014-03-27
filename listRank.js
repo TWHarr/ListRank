@@ -10,11 +10,15 @@ if ((parseInt(localStorage.getItem('count'))) !== null) {
     var counter = 0;
 }
 
+<<<<<<< HEAD
 var item1 = "";
 var item2 = "";
 var last = [];
 
 var buildList = function(formField) {
+=======
+var buildList = function(formField) { // accepts new list items, adds them to bottom of list, displays
+>>>>>>> 1f1e83aa218fef125cb12b18fb2011ed710cdc79
     if (formField !== null) {
         var formField = formField.split(',');
         var listCollapse =[];
@@ -42,7 +46,7 @@ var select2 = function() {// selects the two items to be compared
 };
 
 
-var choice = function() {
+var choice = function() { // calls select2 to get random items, displays on page
     select2();
     $(".item1 > p").empty().append(item1[0]);
     $(".item2 > p").empty().append(item2[0]);
@@ -102,6 +106,7 @@ var undoLast = function(){ //undo function to be called with last obj
         $(".result").empty().append("Your last choice didn't cause a change. There's nothing to undo!");
     } else if (list !== last) {
         list = last;
+        counter--;
         displayList();
         $(".result").empty().append("Your last choice was reverted!");
     }
@@ -159,7 +164,7 @@ $(document).ready(function(){ // on page load, if there is a cached list, displa
     }
 })
 
-$(document).ready(function(){
+$(document).ready(function(){ // increment ranking counter on page
     if (counter > 0) {
         $(".counter").empty().append(counter + " items!")
     }

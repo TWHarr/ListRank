@@ -1,7 +1,72 @@
-.list, .item1 {
+.item1 {
     float: left;
+    padding-left: 15px;
+    padding-top: 75px;
 }
 
-.choice, .item2 {
+.item2 {
     float: right;
+    padding-right: 15px;
+    padding-top: 75px;
+}
+
+.choice {
+	overflow: hidden;
+	height: 300px;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px black solid;
+	border-radius: 15px;
+}
+
+.list {
+	float: left;
+	padding-left:50px;
+	padding-right:50px;
+	max-width: 300px;
+	border: 1px black solid;
+	border-radius: 15px;
+}
+
+.footer {
+	clear: both;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.main {
+	padding-bottom:60px;
+	overflow: auto;
+}
+
+.container {
+	min-height: 100%;
+	position: relative;
+}
+
+.top h2 {
+	padding-left: 50px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+}
+
+.footer a {
+	display: inline;
+	padding: 5px 20px 5px 20px;
+}
+
+.list button {
+	display: block;
 }
