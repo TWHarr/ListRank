@@ -14,6 +14,7 @@ if ((parseInt(localStorage.getItem('count'))) !== null) {
 var item1 = "";
 var item2 = "";
 var last = [];
+var space1, space2 = "";
 
 var buildList = function(formField) { // accepts new list items, adds them to bottom of list, displays
     if (formField !== null) {
@@ -51,14 +52,15 @@ var choice = function() { // calls select2 to get random items, displays on page
 
 $(document).ready(function(){ //user presses button1
     $(".choice1").on("click", function(){
+        recentChoice = "one";
         counter++;
         item1[1]++;
         item2[1]++;
         item1[2]++;
         $(".counter").empty().append(counter + " items!")
         last = $.extend(true, [], list);
-        var space1 = list.indexOf(item1);
-        var space2 = list.indexOf(item2);
+        space1 = list.indexOf(item1);
+        space2 = list.indexOf(item2);
         if (space2 < space1) {
             var switched = list.splice(space1,1);
             var newList = list.splice(space2,0,item1);
@@ -75,14 +77,15 @@ $(document).ready(function(){ //user presses button1
 
 $(document).ready(function(){ // user presses button 2
     $(".choice2").on("click", function(){
-       counter++;
+        recentChoice = "two";
+        counter++;
         item1[1]++;
         item2[1]++;
         item2[2]++;
         $(".counter").empty().append(counter + " items!")
         last = $.extend(true, [], list);
-        var space1 = list.indexOf(item1);
-        var space2 = list.indexOf(item2);
+        space1 = list.indexOf(item1);
+        space2 = list.indexOf(item2);
         if (space1 < space2) {
             var switched = list.splice(space2,1);
             var newList = list.splice(space1,0,item2);
@@ -99,13 +102,32 @@ $(document).ready(function(){ // user presses button 2
 
 
 var undoLast = function(){ //undo function to be called with last obj
-    if (list === last) {
-        $(".result").empty().append("Your last choice didn't cause a change. There's nothing to undo!");
-    } else if (list !== last) {
-        list = last;
-        counter--;
-        displayList();
-        $(".result").empty().append("Your last choice was reverted!");
+    console.log("This is list" + list);
+    console.log("This is last" + last);
+    if ((counter > 0)) {
+        if (list == last) {
+            $(".result").empty().append("Your last choice didn't cause a change. There's nothing to undo!");
+            choice();
+        } else {
+            if (recentChoice == "one") {
+                console.log(last[space1]);
+                last[space1][1]--;
+                last[space1][2]--;
+                last[space2][1]--;
+                console.log(last[space1]);
+            } else if (recentChoice == "two") {
+                console.log(last[space2]);
+                last[space2][1]--;
+                last[space2][2]--;
+                last[space1][1]--;
+                console.log(last[space2]);
+            }    
+            list = last;
+            counter--;
+            displayList();
+            $(".result").empty().append("Your last choice was reverted!");
+            choice();
+        }
     }
 }
 
