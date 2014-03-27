@@ -3,14 +3,16 @@ if ((JSON.parse(localStorage.getItem('cachedList')) !== null)) {
 } else {
     var list = [];
 }
-var item1 = "";
-var item2 = "";
-var last = [];
+
 if ((parseInt(localStorage.getItem('count'))) !== null) {
     var counter = parseInt(localStorage.getItem('count'));
 } else {
     var counter = 0;
 }
+
+var item1 = "";
+var item2 = "";
+var last = [];
 
 var buildList = function(formField) {
     if (formField !== null) {
@@ -21,7 +23,7 @@ var buildList = function(formField) {
         };
         listCollapse.join("").toLowerCase().replace(/\s|[^a-z0-9]/g,"");
         for (var i = 0; i < formField.length; i++) {
-            if (listCollapse.indexOf(formField[i].toLowerCase().replace(/\s|[^a-z0-9]/g,"")) === -1) {
+            if ((listCollapse.indexOf(formField[i].toLowerCase().replace(/\s|[^a-z0-9]/g,"")) === -1) && (formField[i].replace(/\s/g,"").length > 0)) {
                 list.push([formField[i], 0, 0]);
             }
         }
