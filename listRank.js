@@ -10,15 +10,12 @@ if ((parseInt(localStorage.getItem('count'))) !== null) {
     var counter = 0;
 }
 
-<<<<<<< HEAD
+
 var item1 = "";
 var item2 = "";
 var last = [];
 
-var buildList = function(formField) {
-=======
 var buildList = function(formField) { // accepts new list items, adds them to bottom of list, displays
->>>>>>> 1f1e83aa218fef125cb12b18fb2011ed710cdc79
     if (formField !== null) {
         var formField = formField.split(',');
         var listCollapse =[];
