@@ -102,25 +102,19 @@ $(document).ready(function(){ // user presses button 2
 
 
 var undoLast = function(){ //undo function to be called with last obj
-    console.log("This is list" + list);
-    console.log("This is last" + last);
     if ((counter > 0)) {
         if (list == last) {
             $(".result").empty().append("Your last choice didn't cause a change. There's nothing to undo!");
             choice();
         } else {
             if (recentChoice == "one") {
-                console.log(last[space1]);
                 last[space1][1]--;
                 last[space1][2]--;
                 last[space2][1]--;
-                console.log(last[space1]);
             } else if (recentChoice == "two") {
-                console.log(last[space2]);
                 last[space2][1]--;
                 last[space2][2]--;
                 last[space1][1]--;
-                console.log(last[space2]);
             }    
             list = last;
             counter--;
