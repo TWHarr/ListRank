@@ -1,11 +1,11 @@
-if ((JSON.parse(localStorage.getItem('cachedList')) !== null)) {
+if ((JSON.parse(localStorage.getItem('cachedList')) != null)) {
     var list = (JSON.parse(localStorage.getItem('cachedList')));
 } else {
     var list = [];
 }
 
-if ((parseInt(localStorage.getItem('count'))) !== null) {
-    var counter = parseInt(localStorage.getItem('count'));
+if ((JSON.parse(localStorage.getItem('count'))) != null) {
+    var counter = parseInt((JSON.parse(localStorage.getItem('count'))));
 } else {
     var counter = 0;
 }
@@ -127,7 +127,7 @@ var undoLast = function(){ //undo function to be called with last obj
 
 var displayList = function(){ //displays the updated list on the page
     localStorage.setItem('cachedList', JSON.stringify(list));
-    localStorage.setItem('count', counter.toString());
+    localStorage.setItem('count', JSON.stringify(counter));
     $(".listHead > li").remove();
     $(".counter").empty().append(counter + " items!");
     for (var i = 0; i < list.length; i++) {
