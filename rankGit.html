@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="rankStyle.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="rankStyle.css">
 </head>
 <body>
 <script src="jquery-1.11.0.min.js"></script>
@@ -17,24 +17,24 @@
     </div>
     <div class="main">
         <div class ="list">
-            <h3>Item(s) to rank:</h3><input type="text" /><button class="submit">Submit</button>
+            <h3>Item(s) to rank:</h3><input type="text" /><button type="button" class="btn btn-sm btn-default" id="submit">Submit</button>
             <p>Your List:</p>
             <ol class="listHead"></ol>
             <p class="resultInt">Result:</p><p class="result"></p>
-            <button class="rank">Rank your list!</button>
-            <button class="undo"> Undo your last selection!</button>
-            <button class="delete">Clear your list?</button>
+            <button type="button" class="btn btn-sm btn-default" id="rank">Rank your list!</button>
+            <button type="button" class="btn btn-sm btn-default" id="undo"> Undo your last selection!</button>
+            <button type="button" class="btn btn-sm btn-default" id="delete">Clear your list?</button>
             <p>You've ranked</p><p class="counter">0</p>
         </div>
         <div class ="choice">
             <h3>Which do you prefer?</h3>
             <div class="item1">
                 <p></p>
-                <button class="choice1"> This one!</button>
+                <button type="button" class="btn btn-sm btn-default" id="choice1"> This one!</button>
             </div>
             <div class="item2">
                 <p></p>
-                <button class="choice2"> This one!</button>
+                <button type="button" class="btn btn-sm btn-default" id="choice2"> This one!</button>
             </div>
         </div>
     </div>

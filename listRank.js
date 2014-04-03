@@ -51,7 +51,7 @@ var choice = function() { // calls select2 to get random items, displays on page
 }
 
 $(document).ready(function(){ //user presses button1
-    $(".choice1").on("click", function(){
+    $("#choice1").on("click", function(){
         recentChoice = "one";
         counter++;
         item1[1]++;
@@ -76,7 +76,7 @@ $(document).ready(function(){ //user presses button1
 })
 
 $(document).ready(function(){ // user presses button 2
-    $(".choice2").on("click", function(){
+    $("#choice2").on("click", function(){
         recentChoice = "two";
         counter++;
         item1[1]++;
@@ -138,13 +138,13 @@ var displayList = function(){ //displays the updated list on the page
 }
 
 $(document).ready(function() { //clicking undoes the last choice
-    $(".undo").on("click", function() {
+    $("#undo").on("click", function() {
         undoLast();
     })
 });
 
 $(document).ready(function() { // clicking send sends inputted item(s)
-    $(".submit").on("click", function() {
+    $("#submit").on("click", function() {
         var userText = $("input").val();
         if (userText !== "") {
             buildList(userText);
@@ -166,7 +166,7 @@ $(document).ready(function() { // hitting enter submits item as well
 });
 
 $(document).ready(function() { //starts the ranking process
-    $(".rank").on("click", function(){
+    $("#rank").on("click", function(){
         choice();
     })
 })
@@ -184,7 +184,7 @@ $(document).ready(function(){ // increment ranking counter on page
 })
 
 $(document).ready(function(){ //clear list
-    $(".delete").on("click", function() {
+    $("#delete").on("click", function() {
         var choice = confirm("Are you sure you want to delete your list? Once you do, you can't get it back!");
         $(".result").empty();
         $(".item1 > p").empty();
